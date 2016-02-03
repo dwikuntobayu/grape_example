@@ -50,11 +50,15 @@ module API
 
       desc "Delete a data"
       delete '/:id' do
-        @bycycle = Bycycle.find_by_id(params[:id])
-        if @bycycle.destroy
-          {status: 200, message: "Success delete bycycle"}
-        else
-          {status: 400, message: "Fails delete bycycle"}
+        begin
+          @bycycle = Bycycle.find_by_id(params[:id])
+          if @bycycle.destroy
+            {status: 200, message: "Success delete bycycle"}
+          else
+            {status: 400, message: "Fails delete bycycle"}
+          end
+        rescue
+          {status: 400, message: "Bycycle not found"}
         end
       end
 
