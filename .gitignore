@@ -18,3 +18,5 @@
 /config/database.yml
 .project
 .DS_Store
+Gemfile.lock
+
