@@ -45,7 +45,7 @@ module API
 
         @bycycle = Bycycle.find_by_id params[:id]
 
-        {bycycles: @bycycle, status: 200}
+        {bycycle: @bycycle, status: 200}
 
       end
 
